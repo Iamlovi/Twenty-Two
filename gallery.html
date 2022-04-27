@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Gallery</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20220427144758">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		// Initialize and add the map
+		function initMap() {
+			// The location of Uluru
+			const market = {
+				lat: 55.74683311290627,
+				lng: 37.569501618662024
+			};
+			// The map, centered at Uluru
+			const map = new google.maps.Map(document.getElementById("map"), {
+				zoom: 14,
+				center: market,
+				mapId: '61d214b08c7a91f5',
+				mapTypeControl: false,
+				streetViewControl: false,
+				fullscreenControl: false,
+
+			});
+
+
+			// The marker, positioned at Uluru
+			const marker = new google.maps.Marker({
+				position: market,
+				map,
+				animation: google.maps.Animation.DROP,
+				icon: 'img/icons/marker.svg',
+				title: "Click to zoom",
+
+			});
+			marker.addListener("click", toggleBounce);
+
+			function toggleBounce() {
+				if (marker.getAnimation() !== null) {
+					marker.setAnimation(null);
+				} else {
+					marker.setAnimation(google.maps.Animation.BOUNCE);
+				}
+			}
+			map.addListener("center_changed", () => {
+				// 3 seconds after the center of the map has changed, pan back to the
+				// marker.
+				window.setTimeout(() => {
+					map.panTo(marker.getPosition());
+				}, 3000);
+			});
+			marker.addListener("click", () => {
+				map.setZoom(18);
+				map.setCenter(marker.getPosition());
+			});
+
+
+
+		}
+	</script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header" data-scroll-show>
+			<div class="header__container">
+				<a href="home.html" class="header__logo">TwentyTwo</a>
+				<div class="header__nav">
+					<div class="header__menu menu">
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item"><a href="catalog.html" class="menu__link">Catalog</a></li>
+								<li class="menu__item"><a href="gallery.html" class="menu__link">Gallery</a></li>
+								<li class="menu__item"><a href="about.html" class="menu__link">About us</a></li>
+								<li class="menu__item"><a href="contact.html" class="menu__link">Contact</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header__cart cart">
+						<span class="cart__quantity"></span>
+						<button type="button" class="cart__icon">
+							<img src="img/icons/cart.svg" alt="cart">
+						</button>
+						<div class="cart__body">
+							<button type="button" class="cart__close">
+								<img src="img/icons/close.svg" alt="close cart">
+							</button>
+							<div class="cart__title">
+								<div class="cart__bag">
+									<span class="cart__icon-bag"></span>
+								</div>
+								Your Cart
+							</div>
+							<div class="cart__items">
+
+							</div>
+							<div class="cart__total-label">subtotal: <span class="cart__total-price"></span></div>
+							<div class="cart__button button">Checkout</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="page-title">
+				<div class="page-title__container page-title__container_wide ">
+					<div class="page-title__image">
+						<picture><source srcset="img/page-title/image.webp" type="image/webp"><img src="img/page-title/image.jpg" alt="clothes"></picture>
+					</div>
+					<h1 class="page-title__title title title_white">Gallery</h1>
+				</div>
+			</section>
+			<div class="gallery">
+				<div class="gallery__container">
+
+					<div data-tabs data-tabs-animate class="gallery__tabs">
+						<nav data-tabs-titles class="gallery__navigation">
+							<button type="submit" class="gallery__title _tab-active">New</button>
+							<button type="submit" class="gallery__title">Popular</button>
+							<button type="submit" class="gallery__title">First</button>
+							<button type="submit" class="gallery__title">Second</button>
+							<button type="submit" class="gallery__title">Main</button>
+						</nav>
+						<div data-tabs-body class="gallery__content">
+							<div class="gallery__body">
+								<div data-gallery class="gallery__images">
+									<a href="img/page-gallery/1full.jpg" class="gallery__image gallery__image_1">
+										<picture><source srcset="img/page-gallery/1.webp" type="image/webp"><img src="img/page-gallery/1.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/2full.jpg" class="gallery__image gallery__image_2">
+										<picture><source srcset="img/page-gallery/2.webp" type="image/webp"><img src="img/page-gallery/2.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/3full.jpg" class="gallery__image gallery__image_3">
+										<picture><source srcset="img/page-gallery/3.webp" type="image/webp"><img src="img/page-gallery/3.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/4full.jpg" class="gallery__image gallery__image_4">
+										<picture><source srcset="img/page-gallery/4.webp" type="image/webp"><img src="img/page-gallery/4.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/5full.jpg" class="gallery__image gallery__image_5">
+										<picture><source srcset="img/page-gallery/5.webp" type="image/webp"><img src="img/page-gallery/5.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/6full.jpg" class="gallery__image gallery__image_6">
+										<picture><source srcset="img/page-gallery/6.webp" type="image/webp"><img src="img/page-gallery/6.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/7full.jpg" class="gallery__image gallery__image_7">
+										<picture><source srcset="img/page-gallery/7.webp" type="image/webp"><img src="img/page-gallery/7.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/8full.jpg" class="gallery__image gallery__image_8">
+										<picture><source srcset="img/page-gallery/8.webp" type="image/webp"><img src="img/page-gallery/8.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/9full.jpg" class="gallery__image gallery__image_9">
+										<picture><source srcset="img/page-gallery/9.webp" type="image/webp"><img src="img/page-gallery/9.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/10full.jpg" class="gallery__image gallery__image_10">
+										<picture><source srcset="img/page-gallery/10.webp" type="image/webp"><img src="img/page-gallery/10.jpg" alt="clothes"></picture>
+									</a>
+								</div>
+							</div>
+
+
+							<div class="gallery__body">
+								<div data-gallery class="gallery__images">
+
+									<a href="img/page-gallery/4full.jpg" class="gallery__image gallery__image_4">
+										<picture><source srcset="img/page-gallery/4.webp" type="image/webp"><img src="img/page-gallery/4.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/5full.jpg" class="gallery__image gallery__image_5">
+										<picture><source srcset="img/page-gallery/5.webp" type="image/webp"><img src="img/page-gallery/5.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/1full.jpg" class="gallery__image gallery__image_1">
+										<picture><source srcset="img/page-gallery/1.webp" type="image/webp"><img src="img/page-gallery/1.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/2full.jpg" class="gallery__image gallery__image_2">
+										<picture><source srcset="img/page-gallery/2.webp" type="image/webp"><img src="img/page-gallery/2.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/3full.jpg" class="gallery__image gallery__image_3">
+										<picture><source srcset="img/page-gallery/3.webp" type="image/webp"><img src="img/page-gallery/3.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/10full.jpg" class="gallery__image gallery__image_10">
+										<picture><source srcset="img/page-gallery/10.webp" type="image/webp"><img src="img/page-gallery/10.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/8full.jpg" class="gallery__image gallery__image_8">
+										<picture><source srcset="img/page-gallery/8.webp" type="image/webp"><img src="img/page-gallery/8.jpg" alt="clothes"></picture>
+									</a>
+
+
+								</div>
+							</div>
+							<div class="gallery__body">
+								<div data-gallery class="gallery__images">
+
+									<a href="img/page-gallery/6full.jpg" class="gallery__image gallery__image_6">
+										<picture><source srcset="img/page-gallery/6.webp" type="image/webp"><img src="img/page-gallery/6.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/7full.jpg" class="gallery__image gallery__image_7">
+										<picture><source srcset="img/page-gallery/7.webp" type="image/webp"><img src="img/page-gallery/7.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/8full.jpg" class="gallery__image gallery__image_8">
+										<picture><source srcset="img/page-gallery/8.webp" type="image/webp"><img src="img/page-gallery/8.jpg" alt="clothes"></picture>
+									</a>
+
+									<a href="img/page-gallery/3full.jpg" class="gallery__image gallery__image_3">
+										<picture><source srcset="img/page-gallery/3.webp" type="image/webp"><img src="img/page-gallery/3.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/4full.jpg" class="gallery__image gallery__image_4">
+										<picture><source srcset="img/page-gallery/4.webp" type="image/webp"><img src="img/page-gallery/4.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/5full.jpg" class="gallery__image gallery__image_5">
+										<picture><source srcset="img/page-gallery/5.webp" type="image/webp"><img src="img/page-gallery/5.jpg" alt="clothes"></picture>
+									</a>
+								</div>
+							</div>
+							<div class="gallery__body">
+								<div data-gallery class="gallery__images">
+									<a href="img/page-gallery/5full.jpg" class="gallery__image gallery__image_5">
+										<picture><source srcset="img/page-gallery/5.webp" type="image/webp"><img src="img/page-gallery/5.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/6full.jpg" class="gallery__image gallery__image_6">
+										<picture><source srcset="img/page-gallery/6.webp" type="image/webp"><img src="img/page-gallery/6.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/7full.jpg" class="gallery__image gallery__image_7">
+										<picture><source srcset="img/page-gallery/7.webp" type="image/webp"><img src="img/page-gallery/7.jpg" alt="clothes"></picture>
+									</a>
+
+								</div>
+							</div>
+							<div class="gallery__body">
+								<div data-gallery class="gallery__images">
+
+									<a href="img/page-gallery/6full.jpg" class="gallery__image gallery__image_6">
+										<picture><source srcset="img/page-gallery/6.webp" type="image/webp"><img src="img/page-gallery/6.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/3full.jpg" class="gallery__image gallery__image_3">
+										<picture><source srcset="img/page-gallery/3.webp" type="image/webp"><img src="img/page-gallery/3.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/4full.jpg" class="gallery__image gallery__image_4">
+										<picture><source srcset="img/page-gallery/4.webp" type="image/webp"><img src="img/page-gallery/4.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/5full.jpg" class="gallery__image gallery__image_5">
+										<picture><source srcset="img/page-gallery/5.webp" type="image/webp"><img src="img/page-gallery/5.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/7full.jpg" class="gallery__image gallery__image_7">
+										<picture><source srcset="img/page-gallery/7.webp" type="image/webp"><img src="img/page-gallery/7.jpg" alt="clothes"></picture>
+									</a>
+									<a href="img/page-gallery/8full.jpg" class="gallery__image gallery__image_8">
+										<picture><source srcset="img/page-gallery/8.webp" type="image/webp"><img src="img/page-gallery/8.jpg" alt="clothes"></picture>
+									</a>
+
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__body">
+					<div class="footer__titles">
+						<h2 class="footer__title">Consequat orci, risus</h2>
+						<div class="footer__text">Nulla tellus diam ornare id purus et nisi facilisis nec. Orci nullam ornare
+							quisque
+							mollis sollicitudin. Ante risus lorem pellentesque orci.</div>
+						<div class="footer__social" data-da=".footer__body,767.8">
+							<h3 class="footer__label-links">Join the community</h3>
+							<div class="footer__links">
+								<a href="#/" class="_icon-discord"></a>
+								<a href="#/" class="_icon-youtube"></a>
+								<a href="#/" class="_icon-twitter"></a>
+								<a href="#/" class="_icon-pinterest"></a>
+								<a href="#/" class="_icon-reddit"></a>
+								<a href="#/" class="_icon-facebook"></a>
+							</div>
+						</div>
+					</div>
+					<div data-spollers="767.8,max" data-one-spoller class="footer__nav">
+						<div class="footer__menu">
+							<button type="button" data-spoller class="footer__label">Marketplace</button>
+
+							<ul class="footer__list">
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link ">Shop</a>
+								</li>
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link">About</a>
+								</li>
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link">Gallery</a>
+								</li>
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link">Contact</a>
+								</li>
+							</ul>
+
+						</div>
+						<div class="footer__menu">
+							<button type="button" data-spoller class="footer__label">Resource</button>
+							<ul class="footer__list">
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link">Sed</a>
+								</li>
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link">Vitae</a>
+								</li>
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link">Tellus</a>
+								</li>
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link">Dui</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__menu">
+							<button type="button" data-spoller class="footer__label">My Account</button>
+
+							<ul class="footer__list">
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link">Congue</a>
+								</li>
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link">Augue</a>
+								</li>
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link">Posuere</a>
+								</li>
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link">Molestie</a>
+								</li>
+							</ul>
+
+						</div>
+						<div class="footer__menu">
+							<button type="button" data-spoller class="footer__label">Company</button>
+							<ul class="footer__list">
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link">Cras</a>
+								</li>
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link">Tincidunt</a>
+								</li>
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link">Gravida</a>
+								</li>
+								<li class="footer__item">
+									<a href="#/" class="footer__link footer-link">Mattis</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer__bottom">
+					<p class="footer__copyright">Copyright ® 2021</p>
+					<div class="footer__info">
+						<a href="#/" class="footer__link footer-link">Policy</a>
+						<a href="#/" class="footer__link footer-link">Security</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">Закрыть</button>
+				<div class="popup__text">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20220427144758"></script>
+
+</body>
+
+</html>

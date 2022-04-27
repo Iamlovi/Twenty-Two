@@ -1,0 +1,116 @@
+{
+	"products": [
+		{
+			"id": 1,
+			"image": "img/catalog/product-img1.jpg",
+			"title": "Blouse",
+			"price": "$38",
+			"label": ""
+		},
+		{
+			"id": 2,
+			"image": "img/catalog/product-img2.jpg",
+			"title": "Black Sweetshirt",
+			"price": "$23",
+			"label": ""
+		},
+		{
+			"id": 3,
+			"image": "img/catalog/product-img3.jpg",
+			"title": "Red T-shirt",
+			"price": "$10",
+			"label": ""
+		},
+		{
+			"id": 4,
+			"image": "img/catalog/product-img4.jpg",
+			"title": "Black T-shirt",
+			"price": "$11",
+			"label": "img/icons/sale.svg"
+		},
+		{
+			"id": 5,
+			"image": "img/catalog/product-img3.jpg",
+			"title": "Red T-shirt",
+			"price": "$20",
+			"label": ""
+		},
+		{
+			"id": 6,
+			"image": "img/catalog/product-img4.jpg",
+			"title": "Black T-shirt",
+			"price": "$15",
+			"label": "img/icons/sale.svg"
+		},
+		{
+			"id": 7,
+			"image": "img/catalog/product-img1.jpg",
+			"title": "Blouse ",
+			"price": "$33",
+			"label": ""
+		},
+		{
+			"id": 8,
+			"image": "img/catalog/product-img2.jpg",
+			"title": "Black Sweetshirt",
+			"price": "$27",
+			"label": ""
+		},
+		{
+			"id": 9,
+			"image": "img/catalog/product-img4.jpg",
+			"title": "Black T-shirt",
+			"price": "$12",
+			"label": "img/icons/sale.svg"
+		},
+		{
+			"id": 10,
+			"image": "img/catalog/product-img3.jpg",
+			"title": "Red T-shirt",
+			"price": "$20",
+			"label": ""
+		},
+		{
+			"id": 11,
+			"image": "img/catalog/product-img1.jpg",
+			"title": "Blouse",
+			"price": "$24",
+			"label": ""
+		},
+		{
+			"id": 12,
+			"image": "img/catalog/product-img2.jpg",
+			"title": "Sweatshirt",
+			"price": "$18",
+			"label": ""
+		},
+		{
+			"id": 13,
+			"image": "img/catalog/product-img2.jpg",
+			"title": "Sweatshirt",
+			"price": "$10",
+			"label": ""
+		},
+		{
+			"id": 14,
+			"image": "img/catalog/product-img1.jpg",
+			"title": "Blouse",
+			"price": "$16",
+			"label": ""
+		},
+		{
+			"id": 15,
+			"image": "img/catalog/product-img3.jpg",
+			"title": "Red T-shirt",
+			"price": "$12",
+			"label": ""
+		},
+		{
+			"id": 16,
+			"image": "img/catalog/product-img4.jpg",
+			"title": "Black T-shirt",
+			"price": "$19",
+			"label": "img/icons/sale.svg"
+		}
+	]
+}
