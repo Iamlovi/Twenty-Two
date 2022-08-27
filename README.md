@@ -1,1 +1,1 @@
-https://iamlovi.github.io/twenty-two/
+https://iamlovi.github.io/Twenty-Two/
